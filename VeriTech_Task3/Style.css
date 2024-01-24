@@ -1,0 +1,156 @@
+/* Global styles */
+:root {
+    --dark: #374151;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --grey: #6B7280;
+    --pink: #EC4899;
+    --purple: #8B5CF6;
+    --light: #EEE;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Fira sans", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #FFF;
+    background-color: var(--dark);
+    margin: 0;
+}
+
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--grey);
+    margin-bottom: 1rem;
+}
+
+#task-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#input-text {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--grey);
+    border-radius: 0.5rem;
+    background-color: var(--darker);
+    color: var(--light);
+    font-size: 1.25rem;
+}
+
+#input-submit {
+    color: #FFF;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#input-submit:hover {
+    opacity: 0.8;
+}
+
+#input-submit:active {
+    opacity: 0.6;
+}
+
+/* Task list styles */
+main {
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#list-task {
+    padding: 1rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main .text {
+    flex: 1 1 0%;
+}
+
+.main .text .editing_data {
+    color: var(--light);
+    font-size: 1.25rem;
+    width: 100%;
+    display: flex;
+    transition: 0.4s;
+    background-color: var(--darker);
+    padding: 0.75rem;
+    border: 1px solid var(--darkest);
+    border-radius: 0.5rem;
+    outline: none; /* Remove the border on focus */
+}
+
+.main .text .editing_data:not(:read-only) {
+    color: var(--pink);
+}
+
+.main .action {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.main .action button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.main .action button:hover {
+    opacity: 0.8;
+}
+
+.main .action button:active {
+    opacity: 0.6;
+}
+
+.main .action .editing {
+    color: var(--light);
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main .action .deleting {
+    color: crimson;
+}
